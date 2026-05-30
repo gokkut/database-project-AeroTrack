@@ -83,5 +83,72 @@ INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Ex
 INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (28, 28, 'Alexander', 'Ivanov', 'Technical Records Clerk', DATE '2027-06-25', 1);
 INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (29, 29, 'Ozan', 'Turan', 'Logistics Coordinator', DATE '2028-09-12', 3);
 INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (30, 30, 'Harper', 'Lee', 'Training Instructor', DATE '2029-12-05', 4);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (31, 15, 'Mert', 'Yılmaz', 'Safety Inspector', DATE '2028-05-10', 3);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (32, 8, 'Emma', 'Watson', 'Cabin Trim Specialist', DATE '2027-11-22', 2);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (33, 24, 'Kaan', 'Özdemir', 'Fuel Systems Inspector', DATE '2029-01-15', 4);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (34, 2, 'David', 'Miller', 'Engine Mechanic', DATE '2026-08-30', 5);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (35, 12, 'Ayşenur', 'Çetin', 'APU Engineer', DATE '2030-03-12', 3);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (36, 18, 'Hiroshi', 'Sato', 'Maintenance Scheduler', DATE '2027-06-18', 4);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (37, 1, 'Canan', 'Kurt', 'Avionics Diagnostician', DATE '2028-12-05', 2);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (38, 9, 'Pablo', 'Garcia', 'Paint Shop Supervisor', DATE '2029-09-09', 5);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (39, 14, 'Barış', 'Aksoy', 'Comms Technician', DATE '2027-02-28', 1);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (40, 21, 'Sophie', 'Laurent', 'Composite Inspector', DATE '2028-07-14', 3);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (41, 3, 'Gökhan', 'Yavuz', 'Airframe Welder', DATE '2026-10-05', 4);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (42, 29, 'James', 'Anderson', 'Logistics Analyst', DATE '2030-01-20', 2);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (43, 7, 'Zehra', 'Güneş', 'Electrical Tech', DATE '2027-04-16', 3);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (44, 26, 'Lars', 'Nielsen', 'ECS Specialist', DATE '2029-11-30', 5);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (45, 5, 'Onur', 'Taş', 'Pneumatics Engineer', DATE '2028-08-25', 4);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (46, 11, 'Maria', 'Silva', 'NDT Specialist', DATE '2027-05-01', 3);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (47, 16, 'Ece', 'Köse', 'Line Maintenance Mgr', DATE '2030-06-10', 5);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (48, 30, 'William', 'Taylor', 'Training Coordinator', DATE '2028-02-14', 4);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (49, 25, 'Kerem', 'Işık', 'Doors Technician', DATE '2026-12-12', 2);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (50, 19, 'Anna', 'Kowalski', 'Reliability Engineer', DATE '2029-04-08', 3);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (51, 12, 'Barış', 'Aksoy', 'Avionics Technician', DATE '2028-05-10', 2);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (52, 3, 'Barış', 'Yavuz', 'Airframe Welder', DATE '2029-01-15', 3);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (53, 7, 'Zehra', 'Güneş', 'Electrical Tech', DATE '2027-11-20', 1);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (54, 16, 'Zehra', 'Güneş', 'Line Maintenance Tech', DATE '2028-03-22', 2);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (55, 11, 'Maria', 'Silva', 'NDT Inspector', DATE '2026-09-30', 4);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (56, 39, 'Gökhan', 'Yavuz', 'Comms Technician', DATE '2027-12-01', 3);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (57, 21, 'Ece', 'Aksoy', 'Composite Inspector', DATE '2030-02-18', 2);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (58, 30, 'William', 'Taylor', 'Training Coordinator', DATE '2029-08-14', 5);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (59, 29, 'William', 'Taylor', 'Logistics Analyst', DATE '2028-10-10', 3);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (60, 5, 'Onur', 'Taş', 'Pneumatics Tech', DATE '2027-06-05', 2);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (61, 25, 'Sophie', 'Laurent', 'Doors Technician', DATE '2028-11-11', 4);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (62, 19, 'Kerem', 'Işık', 'Reliability Engineer', DATE '2031-01-25', 3);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (63, 26, 'Anna', 'Kowalski', 'ECS Specialist', DATE '2029-07-07', 4);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (64, 16, 'Lars', 'Nielsen', 'Line Maintenance Tech', DATE '2028-04-12', 2);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (65, 3, 'Gökhan', 'Köse', 'Airframe Welder', DATE '2027-03-15', 1);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (66, 16, 'Ece', 'Köse', 'Line Maintenance Mgr', DATE '2030-12-01', 5);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (67, 29, 'James', 'Anderson', 'Supply Chain Analyst', DATE '2029-05-20', 4);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (68, 11, 'Maria', 'Silva', 'NDT Specialist', DATE '2028-09-09', 2);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (69, 7, 'Barış', 'Aksoy', 'Electrical Tech', DATE '2026-11-11', 1);
+INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (70, 5, 'Zehra', 'Taş', 'Pneumatics Engineer', DATE '2030-10-30', 3);
+
+/*Querries*/
+
+/* Lists employees in maintenance departments with certificates expiring in 2028 or later. */
+SELECT s.First_Name, s.Last_Name, d.Department_Name, s.Role, s.Cert_Expiry_Date
+FROM Staff s
+JOIN Department d 
+ON s.Department_ID = d.Department_ID
+WHERE d.Department_Name LIKE '%Maintenance%'
+AND s.Cert_Expiry_Date >= DATE '2028-01-01';
+
+/* Lists the department name, contact number, and the specific first or last name that is duplicated among employees in that department. */
+SELECT d.Department_Name, d.Contact_Number, s.First_Name AS Shared_Name
+FROM Staff s
+JOIN Department d 
+ON s.Department_ID = d.Department_ID
+GROUP BY d.Department_ID, d.Department_Name, d.Contact_Number, s.First_Name
+HAVING COUNT(s.First_Name) > 1
+    
+UNION
+    
+SELECT  d.Department_Name, d.Contact_Number, s.Last_Name AS Shared_Name
+FROM Staff s
+JOIN Department d 
+ON s.Department_ID = d.Department_ID
+GROUP BY d.Department_ID, d.Department_Name, d.Contact_Number, s.Last_Name
+HAVING COUNT(s.Last_Name) > 1;
 
 COMMIT;
