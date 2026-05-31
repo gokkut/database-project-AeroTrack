@@ -32,32 +32,8 @@ CREATE TABLE Aircraft_Component (
 );
 
 
-   /*AIRCRAFT COMPONENTS INSERTION */
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (101, 1, 'Left Engine CFM56', 'Engine', 'Good', 2015);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (101, 2, 'Right Engine CFM56', 'Engine', 'Needs Inspection', 2015);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (101, 3, 'Main Landing Gear', 'Landing Gear', 'Good', 2015);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (102, 1, 'Left Engine CFM56', 'Engine', 'Excellent', 2016);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (102, 2, 'Right Engine CFM56', 'Engine', 'Excellent', 2016);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (103, 1, 'Weather Radar System', 'Avionics', 'Under Maintenance', 2012);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (103, 2, 'Flight Management Computer', 'Avionics', 'Good', 2012);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (104, 1, 'APU (Auxiliary Power Unit)', 'Power Unit', 'Good', 2018);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (104, 2, 'Nose Landing Gear', 'Landing Gear', 'Excellent', 2018);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (105, 1, 'Elevator Actuator', 'Flight Control', 'Needs Inspection', 2020);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (105, 2, 'Rudder Control Unit', 'Flight Control', 'Good', 2020);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (106, 1, 'Cabin Air Compressor', 'Environmental Control', 'Good', 2019);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (107, 1, 'Left Winglet', 'Structure', 'Under Maintenance', 2014);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (107, 2, 'Right Winglet', 'Structure', 'Under Maintenance', 2014);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (108, 1, 'Engine Fuel Pump', 'Fuel System', 'Excellent', 2022);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (109, 1, 'Hydraulic Pump A', 'Hydraulic System', 'Needs Inspection', 2011);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (109, 2, 'Hydraulic Pump B', 'Hydraulic System', 'Good', 2011);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (110, 1, 'VHF Communication Radio', 'Avionics', 'Excellent', 2021);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (111, 1, 'Passenger Oxygen System', 'Safety System', 'Good', 2017);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (112, 1, 'Brake Assembly Left', 'Landing Gear', 'Needs Inspection', 2013);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (112, 2, 'Brake Assembly Right', 'Landing Gear', 'Good', 2013);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (113, 1, 'Cargo Door Actuator', 'Hydraulic System', 'Excellent', 2019);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (114, 1, 'Anti-Ice System Valve', 'Environmental Control', 'Under Maintenance', 2015);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (115, 1, 'Left Engine LEAP-1A', 'Engine', 'Excellent', 2023);
-    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (115, 2, 'Right Engine LEAP-1A', 'Engine', 'Excellent', 2023);
+  
+    
 
     /*HANGARS INSERTION*/
     INSERT INTO Hangar (Hangar_ID, Hangar_Code, Capacity_Aircraft_Count, Location_Airport) VALUES (1, 'HNG-IST-01', 12, 'Istanbul Airport (IST)');
@@ -114,8 +90,34 @@ CREATE TABLE Aircraft_Component (
     INSERT INTO Aircraft (Aircraft_ID, Hangar_ID, Tail_Reg_No, Production_Year, Current_Flight_Hours, Flight_Status) VALUES (124, 22, 'TC-ZAD', 2019, 13400, 'Standby');
     INSERT INTO Aircraft (Aircraft_ID, Hangar_ID, Tail_Reg_No, Production_Year, Current_Flight_Hours, Flight_Status) VALUES (125, 24, 'TC-ZAE', 2022, 4800, 'Active');
 
-   /* 1. Retrieve the details of 'Active' aircraft that have more flight hours than the overall average of the entire fleet. */
-    
+    /*AIRCRAFT COMPONENTS INSERTION */
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (101, 1, 'Left Engine CFM56', 'Engine', 'Good', 2015);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (101, 2, 'Right Engine CFM56', 'Engine', 'Needs Inspection', 2015);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (101, 3, 'Main Landing Gear', 'Landing Gear', 'Good', 2015);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (102, 1, 'Left Engine CFM56', 'Engine', 'Excellent', 2016);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (102, 2, 'Right Engine CFM56', 'Engine', 'Excellent', 2016);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (103, 1, 'Weather Radar System', 'Avionics', 'Under Maintenance', 2012);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (103, 2, 'Flight Management Computer', 'Avionics', 'Good', 2012);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (104, 1, 'APU (Auxiliary Power Unit)', 'Power Unit', 'Good', 2018);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (104, 2, 'Nose Landing Gear', 'Landing Gear', 'Excellent', 2018);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (105, 1, 'Elevator Actuator', 'Flight Control', 'Needs Inspection', 2020);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (105, 2, 'Rudder Control Unit', 'Flight Control', 'Good', 2020);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (106, 1, 'Cabin Air Compressor', 'Environmental Control', 'Good', 2019);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (107, 1, 'Left Winglet', 'Structure', 'Under Maintenance', 2014);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (107, 2, 'Right Winglet', 'Structure', 'Under Maintenance', 2014);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (108, 1, 'Engine Fuel Pump', 'Fuel System', 'Excellent', 2022);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (109, 1, 'Hydraulic Pump A', 'Hydraulic System', 'Needs Inspection', 2011);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (109, 2, 'Hydraulic Pump B', 'Hydraulic System', 'Good', 2011);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (110, 1, 'VHF Communication Radio', 'Avionics', 'Excellent', 2021);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (111, 1, 'Passenger Oxygen System', 'Safety System', 'Good', 2017);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (112, 1, 'Brake Assembly Left', 'Landing Gear', 'Needs Inspection', 2013);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (112, 2, 'Brake Assembly Right', 'Landing Gear', 'Good', 2013);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (113, 1, 'Cargo Door Actuator', 'Hydraulic System', 'Excellent', 2019);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (114, 1, 'Anti-Ice System Valve', 'Environmental Control', 'Under Maintenance', 2015);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (115, 1, 'Left Engine LEAP-1A', 'Engine', 'Excellent', 2023);
+    INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (115, 2, 'Right Engine LEAP-1A', 'Engine', 'Excellent', 2023);  
+
+/* 1. Retrieve the details of 'Active' aircraft that have more flight hours than the overall average of the entire fleet. */
  SELECT 
     a.Tail_Reg_No, 
     a.Production_Year, 
@@ -132,8 +134,7 @@ CREATE TABLE Aircraft_Component (
  
  
           
-/* 2. List the hangars, their maximum capacity, and the current number of aircraft inside them. */
-          
+/* 2. List the hangars, their maximum capacity, and the current number of aircraft inside them. */         
 SELECT 
     h.Hangar_Code,
     h.Location_Airport,
