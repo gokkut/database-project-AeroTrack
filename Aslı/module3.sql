@@ -1,4 +1,4 @@
-/*Module 3*/
+*Module 3*/
 CREATE TABLE Suppliers (
   Supplier_ID NUMBER PRIMARY KEY,
   Company_Name VARCHAR2(50) NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE Part_Supplier_Catalog (
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (5, 105, 3);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (6, 106, 6);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (7, 107, 23);
-	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (8, 108, 8);
+	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (8, 108, 23);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (9, 109, 10);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (10, 110, 24);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (11, 111, 3);
@@ -99,38 +99,34 @@ CREATE TABLE Part_Supplier_Catalog (
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (13, 113, 7);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (14, 114, 2);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (15, 115, 8);
-	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (16, 101, 11);
-	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (17, 102, 1);
+	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (16, 116, 11);
+	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (17, 117, 1);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (18, 118, 5);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (19, 119, 17);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (20, 120, 13);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (21, 121, 25);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (22, 101, 10);
-	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (23, 123, 14);
+	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (23, 123, 5);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (24, 124, 17);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (25, 125, 9);
 	
 	  /*QUERIES*/
 	  
-		/*1. Show the names and quality certificate numbers of companies whose quality certificate number is like 'AS' or 'ISO' 
-		and whose current stock is less than the critical threshold.*/
+		/*1. List the names and part amount of each company that supplies at least 1 part.*/
 		
-	SELECT Company_Name, Quality_Cert_No
-	FROM Suppliers
-    WHERE (Quality_Cert_No LIKE '%AS%' OR Quality_Cert_No LIKE '%ISO%')
-	AND Supplier_ID IN (
-		SELECT c.Supplier_ID 
-		FROM Part_Supplier_Catalog c
-		INNER JOIN Spare_Parts p ON c.Part_ID = p.Part_ID
-		WHERE p.Current_Stock < p.Critical_Threshold
-	);
+	SELECT s.company_name, COUNT(c.part_id) AS total_parts_supplied
+	FROM suppliers s
+	LEFT JOIN part_supplier_catalog c ON c.supplier_id = s.supplier_id
+	GROUP BY s.company_name
+	HAVING total_parts_supplied >= 1 
+	ORDER BY total_parts_supplied DESC;
 
-		/* 2. List the 'Boeing' or 'Airbus' parts in our catalog that have 2 or more suppliers,
-		along with their total supplier counts.*/
+		/*2. List the companies whose current stocks are less than their critical thresholds. 
+		     Display current stock, critical threshold, and the parts that are running out of stock*/
 		
-	SELECT p.Part_Description, COUNT(c.Supplier_ID) AS Total_Alternative_Suppliers
-    FROM Spare_Parts p
-    INNER JOIN Part_Supplier_Catalog c ON p.Part_ID = c.Part_ID
-	WHERE p.Part_Description LIKE '%Boeing%' OR p.Part_Description LIKE '%Airbus%'
-	GROUP BY p.Part_ID, p.Part_Description
-	HAVING COUNT(c.Supplier_ID) >= 2;
+	SELECT s.company_name, p.part_description, p.current_stock, p.critical_threshold
+	FROM spare_parts p
+	JOIN part_supplier_catalog c ON p.part_id = c.part_id
+	JOIN suppliers s ON c.supplier_id = s.supplier_id
+	WHERE p.current_stock < p.critical_threshold
+	ORDER BY s.company_name;
