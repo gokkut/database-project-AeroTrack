@@ -1,6 +1,4 @@
-/*MODULE 3*/
-
-/*TABLE CREATION*/
+/*Module 3*/
 CREATE TABLE Suppliers (
   Supplier_ID NUMBER PRIMARY KEY,
   Company_Name VARCHAR2(50) NOT NULL,
@@ -44,7 +42,7 @@ CREATE TABLE Part_Supplier_Catalog (
 	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (11, 'Matrix Composites', 'info@matrixcomposites.com', 'ISO9001-2015');
 	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (12, 'Pacific Air Supplies', 'sales@pacificair.com', 'AS9120-B');
 	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (13, 'Vortex Propulsion Ltd', 'support@vortexprop.com', 'AS9100-REV-D');
-	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (14, 'Summit Hose & Seal', 'orders@summitseals.com', 'ISO9001-2015');
+	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (14, 'Summit Hose and Seal', 'orders@summitseals.com', 'ISO9001-2015');
 	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (15, 'Starlight Lighting Co', 'light@starlightaero.com', 'FAA-PMA-2025');
 	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (16, 'Thermal Shield Tech', 'engineering@thermalshield.com', 'AS9100-REV-D');
 	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (17, 'NextGen Sensors Corp', 'sales@nextgensensors.com', 'ISO14001-2015');
@@ -52,23 +50,23 @@ CREATE TABLE Part_Supplier_Catalog (
 	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (19, 'Atlantic Fuel Cells', 'support@atlanticfuel.com', 'EASA-PART-145');
 	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (20, 'Oasis Climate Systems', 'info@oasisclimate.com', 'ISO9001-2015');
 	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (21, 'Precision Rivets LLC', 'sales@precisionrivets.com', 'AS9120-B');
-	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (22, 'Omni Wire & Cable', 'orders@omnicable.com', 'ISO9001-2015');
+	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (22, 'Omni Wire and Cable', 'orders@omnicable.com', 'ISO9001-2015');
 	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (23, 'SafeFlight Oxygen Ltd', 'tech@safeflightox.com', 'AS9100-REV-D');
 	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (24, 'EcoFilters Aerospace', 'green@ecofilters.com', 'ISO14001-2015');
 	INSERT INTO Suppliers (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (25, 'United Aero Structures', 'contract@unitedaero.com', 'AS9100-REV-D');
 
 		
 	/*SPARE PARTS INSERTION*/ 
-	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (101, 'Boeing 737 Brake Assembly', 12, 4);
+	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (101, 'Boeing 737 Brake Assembly', 3, 4);
 	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (102, 'Airbus A320 Fuel Pump', 8, 3);
-	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (103, 'Hydraulic Actuator Seal Kit', 45, 15);
+	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (103, 'Hydraulic Actuator Seal Kit', 12, 15);
 	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (104, 'Titanium Fuselage Rivet Box', 120, 30);
-	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (105, 'LED Navigation Wingtip Light', 6, 2);
+	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (105, 'LED Navigation Wingtip Light', 1, 2);
 	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (106, 'Engine Turbine Blade CFM56', 4, 2);
 	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (107, 'Cockpit Oxygen Mask', 15, 5);
 	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (108, 'Main Landing Gear Tire', 22, 6);
 	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (109, 'Pitot-Static Tube Probe', 9, 3);
-	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (110, 'Cabin Air Recirculation Filter', 50, 10);
+	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (110, 'Cabin Air Recirculation Filter', 8, 10);
 	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (111, 'Weather Radar Transceiver', 3, 1);
 	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (112, 'Flight Data Recorder (BlackBox)', 2, 1);
 	INSERT INTO Spare_Parts (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (113, 'Passenger Seat Belt Buckle', 200, 50);
@@ -101,25 +99,25 @@ CREATE TABLE Part_Supplier_Catalog (
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (13, 113, 7);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (14, 114, 2);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (15, 115, 8);
-	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (16, 116, 11);
-	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (17, 117, 1);
+	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (16, 101, 11);
+	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (17, 102, 1);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (18, 118, 5);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (19, 119, 17);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (20, 120, 13);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (21, 121, 25);
-	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (22, 122, 10);
+	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (22, 101, 10);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (23, 123, 14);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (24, 124, 17);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (25, 125, 9);
 	
-	  /*QUERIES*/
+	  /*QUERİES*/
 	  
-		/*1. Show the names and quality certificate numbers of companies whose quality certificate number is like 'AS9100' or 'ISO9001' 
+		/*1. Show the names and quality certificate numbers of companies whose quality certificate number is like 'AS' or 'ISO' 
 		and whose current stock is less than the critical threshold.*/
 		
 	SELECT Company_Name, Quality_Cert_No
 	FROM Suppliers
-    WHERE (Quality_Cert_No LIKE '%AS9100%' OR Quality_Cert_No LIKE '%ISO9001%')
+    WHERE (Quality_Cert_No LIKE '%AS' OR Quality_Cert_No LIKE '%ISO%')
 	AND Supplier_ID IN (
 		SELECT c.Supplier_ID 
 		FROM Part_Supplier_Catalog c
@@ -130,7 +128,7 @@ CREATE TABLE Part_Supplier_Catalog (
 		/* 2. List the 'Boeing' or 'Airbus' parts in our catalog that have 2 or more suppliers,
 		along with their total supplier counts.*/
 		
-	SELECT p.Part_Description, COUNT(c.Supplier_ID) AS Total_Suppliers
+	SELECT p.Part_Description, COUNT(c.Supplier_ID) AS Total_Alternative_Suppliers
     FROM Spare_Parts p
     INNER JOIN Part_Supplier_Catalog c ON p.Part_ID = c.Part_ID
 	WHERE p.Part_Description LIKE '%Boeing%' OR p.Part_Description LIKE '%Airbus%'
