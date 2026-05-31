@@ -110,14 +110,14 @@ CREATE TABLE Part_Supplier_Catalog (
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (24, 124, 17);
 	INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (25, 125, 9);
 	
-	  /*QUERİES*/
+	  /*QUERIES*/
 	  
 		/*1. Show the names and quality certificate numbers of companies whose quality certificate number is like 'AS' or 'ISO' 
 		and whose current stock is less than the critical threshold.*/
 		
 	SELECT Company_Name, Quality_Cert_No
 	FROM Suppliers
-    WHERE (Quality_Cert_No LIKE '%AS' OR Quality_Cert_No LIKE '%ISO%')
+    WHERE (Quality_Cert_No LIKE '%AS%' OR Quality_Cert_No LIKE '%ISO%')
 	AND Supplier_ID IN (
 		SELECT c.Supplier_ID 
 		FROM Part_Supplier_Catalog c
