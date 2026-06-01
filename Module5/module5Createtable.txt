@@ -1,0 +1,29 @@
+CREATE TABLE System_User(
+    User_ID INT PRIMARY KEY,
+    Staff_ID INT NOT NULL UNIQUE,
+    Username VARCHAR2(40) NOT NULL UNIQUE,
+    Password_Hash VARCHAR2(255) NOT NULL,
+    CONSTRAINT fk_user_staff FOREIGN KEY (Staff_ID) REFERENCES Staff(Staff_ID) ON DELETE CASCADE
+);
+ 
+
+CREATE TABLE Maintenance_Crew(
+    Crew_ID INT PRIMARY KEY,
+    Maintenance_ID INT NOT NULL,
+    Staff_ID INT NOT NULL,
+    CONSTRAINT uq_crew UNIQUE (Maintenance_ID, Staff_ID),
+    CONSTRAINT fk_crew_log FOREIGN KEY (Maintenance_ID) REFERENCES Maintenance_Log(Maintenance_ID) ON DELETE CASCADE,
+    CONSTRAINT fk_crew_staff FOREIGN KEY (Staff_ID) REFERENCES Staff(Staff_ID) ON DELETE CASCADE
+);
+ 
+ 
+CREATE TABLE Maintenance_Parts_Used(
+    Detail_ID INT PRIMARY KEY,
+    Maintenance_ID INT NOT NULL,
+    Part_ID INT NOT NULL,
+    Quantity_Used INT NOT NULL,
+    CONSTRAINT chk_qty_used CHECK (Quantity_Used > 0),
+    CONSTRAINT uq_parts_used UNIQUE (Maintenance_ID, Part_ID),
+    CONSTRAINT fk_pu_log  FOREIGN KEY (Maintenance_ID) REFERENCES Maintenance_Log(Maintenance_ID) ON DELETE CASCADE,
+    CONSTRAINT fk_pu_part FOREIGN KEY (Part_ID) REFERENCES Spare_Part(Part_ID) ON DELETE CASCADE
+);

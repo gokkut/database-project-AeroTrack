@@ -1,0 +1,16 @@
+-- (JOIN + GROUP BY + COUNT) Problem: How many aircraft are assigned to each hangar?
+SELECT h.Hangar_Code, h.Location_Airport, COUNT(a.Aircraft_ID) AS Aircraft_Count
+FROM HANGAR h
+LEFT JOIN AIRCRAFT a ON a.Hangar_ID = h.Hangar_ID
+GROUP BY h.Hangar_Code, h.Location_Airport
+ORDER BY Aircraft_Count DESC, h.Hangar_Code;
+ 
+-- (JOIN + GROUP BY + AVG) Problem: For each maintenance type, how many times was it performed
+--     and what is the average labour (man-hours) it requires?
+SELECT t.Type_Description,
+       COUNT(l.Maintenance_ID)            AS Num_Logs,
+       ROUND(AVG(l.Total_Man_Hours), 1)   AS Avg_Man_Hours
+FROM MAINTENANCE_TYPE t
+JOIN MAINTENANCE_LOG l ON l.Type_ID = t.Type_ID
+GROUP BY t.Type_Description
+ORDER BY Avg_Man_Hours DESC;
