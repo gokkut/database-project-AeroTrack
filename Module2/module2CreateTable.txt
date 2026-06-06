@@ -1,0 +1,18 @@
+CREATE TABLE Department(
+    Department_ID INT PRIMARY KEY,
+    Department_Name VARCHAR2(50) NOT NULL,
+    Contact_Number VARCHAR2(30) NOT NULL
+);
+
+
+CREATE TABLE Staff(
+    Staff_ID INT PRIMARY KEY,
+    Department_ID INT,
+    First_Name VARCHAR2(50) NOT NULL,
+    Last_Name VARCHAR2(50) NOT NULL,
+    Role VARCHAR2(50) NOT NULL,
+    Cert_Expiry_Date DATE NOT NULL,
+    Seniority_Level NUMBER(1) NOT NULL
+        CONSTRAINT chk_seniority CHECK (Seniority_Level BETWEEN 1 AND 5),
+    FOREIGN KEY (Department_ID) REFERENCES Department(Department_ID)   
+);

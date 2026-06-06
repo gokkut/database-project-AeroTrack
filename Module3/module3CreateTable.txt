@@ -1,0 +1,24 @@
+CREATE TABLE Supplier(
+    Supplier_ID     INT PRIMARY KEY,
+    Company_Name    VARCHAR2(50) NOT NULL,
+    Contact_Email   VARCHAR2(80) NOT NULL UNIQUE,
+    Quality_Cert_No VARCHAR2(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE Spare_Part(
+    Part_ID INT PRIMARY KEY,
+    Part_Description VARCHAR2(200) NOT NULL,
+    Current_Stock INT DEFAULT 0, /*Eğer bilgi girilmediyse stok boş*/
+    Critical_Threshold INT DEFAULT 5  /*Minimum stok seviyesi*/
+);
+
+CREATE TABLE Part_Supplier_Catalog(
+    Catalog_ID INT PRIMARY KEY,
+    Part_ID INT NOT NULL,
+    Supplier_ID INT NOT NULL,
+    CONSTRAINT uq_part_supplier UNIQUE (Part_ID, Supplier_ID),
+	CONSTRAINT fk_catalog_part FOREIGN KEY (Part_ID) 
+    REFERENCES Spare_Part(Part_ID) ON DELETE CASCADE,
+	CONSTRAINT fk_catalog_supplier FOREIGN KEY (Supplier_ID) 
+    REFERENCES Supplier(Supplier_ID) ON DELETE CASCADE
+);

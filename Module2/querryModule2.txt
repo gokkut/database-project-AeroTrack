@@ -1,0 +1,25 @@
+/*(GROUP BY + HAVING) Which maintenance types have been performed more than twice?*/
+SELECT t.Type_Description, COUNT(*) AS Times_Performed
+FROM MAINTENANCE_LOG l
+JOIN MAINTENANCE_TYPE t ON l.Type_ID = t.Type_ID
+GROUP BY t.Type_Description
+HAVING COUNT(*) > 2
+ORDER BY Times_Performed DESC;
+
+
+/* Lists the department name, contact number, and the specific first or last name that is duplicated among employees in that department. */
+SELECT d.Department_Name, d.Contact_Number, s.First_Name AS Shared_Name
+FROM Staff s
+JOIN Department d 
+ON s.Department_ID = d.Department_ID
+GROUP BY d.Department_ID, d.Department_Name, d.Contact_Number, s.First_Name
+HAVING COUNT(s.First_Name) > 1
+    
+UNION
+    
+SELECT  d.Department_Name, d.Contact_Number, s.Last_Name AS Shared_Name
+FROM Staff s
+JOIN Department d 
+ON s.Department_ID = d.Department_ID
+GROUP BY d.Department_ID, d.Department_Name, d.Contact_Number, s.Last_Name
+HAVING COUNT(s.Last_Name) > 1;

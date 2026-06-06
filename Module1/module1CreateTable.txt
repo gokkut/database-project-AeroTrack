@@ -1,0 +1,27 @@
+CREATE TABLE Hangar(
+    Hangar_ID INT PRIMARY KEY,
+    Hangar_Code VARCHAR2(50) NOT NULL,
+    Capacity_Aircraft_Count INT DEFAULT 0, /*Eğer bilgi girilmediyse içinde uçak yok*/
+    Location_Airport VARCHAR2(100) NOT NULL
+);
+
+CREATE TABLE Aircraft(
+    Aircraft_ID INT PRIMARY KEY,
+    Hangar_ID INT,
+    Tail_Reg_No VARCHAR2(50) NOT NULL UNIQUE,
+    Production_Year INT NOT NULL,
+    Current_Flight_Hour INT DEFAULT 0, /*Eğer bilgi girilmediyse yeni uçak gibi yani sıfır*/
+    Flight_Status VARCHAR2(50) DEFAULT 'Active', /*Eğer bilgi girilmediyse zaten hazır*/
+    FOREIGN KEY (Hangar_ID) REFERENCES Hangar(Hangar_ID)
+);
+
+CREATE TABLE Aircraft_Component (
+    Aircraft_ID INT NOT NULL,
+    Component_No INT NOT NULL,
+    Component_Name VARCHAR2(60) NOT NULL,
+    Component_Type VARCHAR2(40),
+    Condition_Status VARCHAR2(30),
+    Production_Year INT,
+    CONSTRAINT pk_aircraft_component PRIMARY KEY (Aircraft_ID, Component_No),
+    CONSTRAINT fk_component_aircraft FOREIGN KEY (Aircraft_ID) REFERENCES Aircraft(Aircraft_ID) ON DELETE CASCADE
+);
