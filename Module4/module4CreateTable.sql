@@ -1,0 +1,18 @@
+CREATE TABLE MAINTENANCE_TYPE (
+    Type_ID NUMBER PRIMARY KEY,
+    Type_Description VARCHAR2(100) NOT NULL,
+    Standard_Cost NUMBER(10, 2) NOT NULL,
+    CONSTRAINT chk_standard_cost CHECK (Standard_Cost > 0)
+);
+
+CREATE TABLE MAINTENANCE_LOG (
+    Maintenance_ID NUMBER PRIMARY KEY,
+    Operation_Date DATE NOT NULL,
+    Total_Man_Hours NUMBER(5, 2) NOT NULL,
+    Aircraft_ID NUMBER NOT NULL,
+    Type_ID NUMBER NOT NULL,
+    CONSTRAINT fk_log_aircraft FOREIGN KEY (Aircraft_ID) REFERENCES AIRCRAFT(Aircraft_ID),
+    CONSTRAINT fk_log_type FOREIGN KEY (Type_ID) REFERENCES MAINTENANCE_TYPE(Type_ID)
+);
+
+COMMIT;
