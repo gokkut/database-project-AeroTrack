@@ -1,7 +1,7 @@
 -- AeroTrack - sample data (matches final schema; FK-safe order; >=25 rows per table)
 -- Run AFTER the CREATE TABLE script.
 
--- Hangar  (25 rows)
+-- Hangar
 INSERT INTO Hangar (Hangar_ID, Hangar_Code, Capacity_Aircraft_Count, Location_Airport) VALUES (1, 'HNG-IST-01', 12, 'Istanbul Airport (IST)');
 INSERT INTO Hangar (Hangar_ID, Hangar_Code, Capacity_Aircraft_Count, Location_Airport) VALUES (2, 'HNG-IST-02', 8, 'Istanbul Airport (IST)');
 INSERT INTO Hangar (Hangar_ID, Hangar_Code, Capacity_Aircraft_Count, Location_Airport) VALUES (3, 'HNG-ESB-01', 5, 'Ankara Esenboga (ESB)');
@@ -28,7 +28,7 @@ INSERT INTO Hangar (Hangar_ID, Hangar_Code, Capacity_Aircraft_Count, Location_Ai
 INSERT INTO Hangar (Hangar_ID, Hangar_Code, Capacity_Aircraft_Count, Location_Airport) VALUES (24, 'HNG-SZF-01', 4, 'Samsun Carsamba (SZF)');
 INSERT INTO Hangar (Hangar_ID, Hangar_Code, Capacity_Aircraft_Count, Location_Airport) VALUES (25, 'HNG-VAS-01', 2, 'Sivas Nuri Demirag (VAS)');
 
--- Aircraft  (25 rows)
+-- Aircraft 
 INSERT INTO Aircraft (Aircraft_ID, Hangar_ID, Tail_Reg_No, Production_Year, Current_Flight_Hour, Flight_Status) VALUES (101, 1, 'TC-JGA', 2015, 24500, 'Active');
 INSERT INTO Aircraft (Aircraft_ID, Hangar_ID, Tail_Reg_No, Production_Year, Current_Flight_Hour, Flight_Status) VALUES (102, 1, 'TC-JGB', 2016, 22100, 'Active');
 INSERT INTO Aircraft (Aircraft_ID, Hangar_ID, Tail_Reg_No, Production_Year, Current_Flight_Hour, Flight_Status) VALUES (103, 2, 'TC-JGC', 2012, 35000, 'Maintenance');
@@ -55,7 +55,7 @@ INSERT INTO Aircraft (Aircraft_ID, Hangar_ID, Tail_Reg_No, Production_Year, Curr
 INSERT INTO Aircraft (Aircraft_ID, Hangar_ID, Tail_Reg_No, Production_Year, Current_Flight_Hour, Flight_Status) VALUES (124, 22, 'TC-ZAD', 2019, 13400, 'Standby');
 INSERT INTO Aircraft (Aircraft_ID, Hangar_ID, Tail_Reg_No, Production_Year, Current_Flight_Hour, Flight_Status) VALUES (125, 24, 'TC-ZAE', 2022, 4800, 'Active');
 
--- Aircraft_Component  (25 rows)
+-- Aircraft_Component
 INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (101, 1, 'Left Engine CFM56', 'Engine', 'Good', 2015);
 INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (101, 2, 'Right Engine CFM56', 'Engine', 'Needs Inspection', 2015);
 INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (101, 3, 'Main Landing Gear', 'Landing Gear', 'Good', 2015);
