@@ -1,3 +1,4 @@
+-- Module 1
 CREATE TABLE Hangar(
     Hangar_ID INT PRIMARY KEY,
     Hangar_Code VARCHAR2(50) NOT NULL,
@@ -26,14 +27,12 @@ CREATE TABLE Aircraft_Component (
     CONSTRAINT fk_component_aircraft FOREIGN KEY (Aircraft_ID) REFERENCES Aircraft(Aircraft_ID) ON DELETE CASCADE
 );
 
-
-
+-- Module 2
 CREATE TABLE Department(
     Department_ID INT PRIMARY KEY,
     Department_Name VARCHAR2(50) NOT NULL,
     Contact_Number VARCHAR2(30) NOT NULL
 );
-
 
 CREATE TABLE Staff(
     Staff_ID INT PRIMARY KEY,
@@ -47,7 +46,7 @@ CREATE TABLE Staff(
     FOREIGN KEY (Department_ID) REFERENCES Department(Department_ID)   
 );
 
-
+-- Module 3
 CREATE TABLE Supplier(
     Supplier_ID     INT PRIMARY KEY,
     Company_Name    VARCHAR2(50) NOT NULL,
@@ -72,24 +71,26 @@ CREATE TABLE Part_Supplier_Catalog(
 	CONSTRAINT fk_catalog_supplier FOREIGN KEY (Supplier_ID) 
     REFERENCES Supplier(Supplier_ID) ON DELETE CASCADE
 );
-CREATE TABLE Maintenance_Type(
-    Type_ID INT PRIMARY KEY,
-    Type_Description VARCHAR2(60) NOT NULL,
-    Standard_Cost INT NOT NULL,
-    CONSTRAINT chk_std_cost CHECK (Standard_Cost > 0)
+
+-- Module 4
+CREATE TABLE MAINTENANCE_TYPE (
+    Type_ID NUMBER PRIMARY KEY,
+    Type_Description VARCHAR2(100) NOT NULL,
+    Standard_Cost NUMBER(10, 2) NOT NULL,
+    CONSTRAINT chk_standard_cost CHECK (Standard_Cost > 0)
 );
 
-CREATE TABLE Maintenance_Log(
-    Maintenance_ID INT PRIMARY KEY,
-    Aircraft_ID INT NOT NULL,
-    Type_ID INT NOT NULL,
+CREATE TABLE MAINTENANCE_LOG (
+    Maintenance_ID NUMBER PRIMARY KEY,
     Operation_Date DATE NOT NULL,
-    Total_Man_Hours NUMBER NOT NULL,
-    CONSTRAINT chk_man_hours CHECK (Total_Man_Hours >= 0),
-    CONSTRAINT fk_log_aircraft FOREIGN KEY (Aircraft_ID) REFERENCES Aircraft(Aircraft_ID) ON DELETE CASCADE,
-    CONSTRAINT fk_log_type FOREIGN KEY (Type_ID) REFERENCES Maintenance_Type(Type_ID)
+    Total_Man_Hours NUMBER(5, 2) NOT NULL,
+    Aircraft_ID NUMBER NOT NULL,
+    Type_ID NUMBER NOT NULL,
+    CONSTRAINT fk_log_aircraft FOREIGN KEY (Aircraft_ID) REFERENCES AIRCRAFT(Aircraft_ID),
+    CONSTRAINT fk_log_type FOREIGN KEY (Type_ID) REFERENCES MAINTENANCE_TYPE(Type_ID)
 );
- 
+
+-- Module 5
 CREATE TABLE System_User(
     User_ID INT PRIMARY KEY,
     Staff_ID INT NOT NULL UNIQUE,
@@ -98,7 +99,6 @@ CREATE TABLE System_User(
     CONSTRAINT fk_user_staff FOREIGN KEY (Staff_ID) REFERENCES Staff(Staff_ID) ON DELETE CASCADE
 );
  
-
 CREATE TABLE Maintenance_Crew(
     Crew_ID INT PRIMARY KEY,
     Maintenance_ID INT NOT NULL,
@@ -107,7 +107,6 @@ CREATE TABLE Maintenance_Crew(
     CONSTRAINT fk_crew_log FOREIGN KEY (Maintenance_ID) REFERENCES Maintenance_Log(Maintenance_ID) ON DELETE CASCADE,
     CONSTRAINT fk_crew_staff FOREIGN KEY (Staff_ID) REFERENCES Staff(Staff_ID) ON DELETE CASCADE
 );
- 
  
 CREATE TABLE Maintenance_Parts_Used(
     Detail_ID INT PRIMARY KEY,
@@ -119,5 +118,4 @@ CREATE TABLE Maintenance_Parts_Used(
     CONSTRAINT fk_pu_log  FOREIGN KEY (Maintenance_ID) REFERENCES Maintenance_Log(Maintenance_ID) ON DELETE CASCADE,
     CONSTRAINT fk_pu_part FOREIGN KEY (Part_ID) REFERENCES Spare_Part(Part_ID) ON DELETE CASCADE
 );
-
 
