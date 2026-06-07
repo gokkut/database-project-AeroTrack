@@ -1,5 +1,4 @@
--- AeroTrack - sample data (matches final schema; FK-safe order; >=25 rows per table)
--- Run AFTER the CREATE TABLE script.
+-- Module 1
 
 -- Hangar
 INSERT INTO Hangar (Hangar_ID, Hangar_Code, Capacity_Aircraft_Count, Location_Airport) VALUES (1, 'HNG-IST-01', 12, 'Istanbul Airport (IST)');
@@ -82,7 +81,9 @@ INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Compo
 INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (115, 1, 'Left Engine LEAP-1A', 'Engine', 'Excellent', 2023);
 INSERT INTO Aircraft_Component (Aircraft_ID, Component_No, Component_Name, Component_Type, Condition_Status, Production_Year) VALUES (115, 2, 'Right Engine LEAP-1A', 'Engine', 'Excellent', 2023);
 
--- Department  (30 rows)
+-- Module 2
+
+-- Department
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (1, 'Avionics', '+905551234501');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (2, 'Engine', '+905551234502');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (3, 'Airframe', '+905551234503');
@@ -96,25 +97,25 @@ INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (11, 'Non-Destructive Testing', '+905551234511');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (12, 'Auxiliary Power Unit', '+905551234512');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (13, 'Flight Controls', '+905551234513');
-INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (14, 'Radar & Communications', '+905551234514');
-INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (15, 'Safety & Quality Assurance', '+905551234515');
+INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (14, 'Radar and Communications', '+905551234514');
+INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (15, 'Safety and Quality Assurance', '+905551234515');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (16, 'Line Maintenance', '+905551234516');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (17, 'Base Maintenance', '+905551234517');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (18, 'Maintenance Planning', '+905551234518');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (19, 'Reliability Engineering', '+905551234519');
-INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (20, 'Tooling & Calibration', '+905551234520');
+INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (20, 'Tooling and Calibration', '+905551234520');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (21, 'Composite Repair', '+905551234521');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (22, 'In-Flight Entertainment', '+905551234522');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (23, 'Oxygen Systems', '+905551234523');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (24, 'Fuel Systems', '+905551234524');
-INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (25, 'Windows & Doors', '+905551234525');
+INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (25, 'Windows and Doors', '+905551234525');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (26, 'Environmental Control', '+905551234526');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (27, 'Fleet Management', '+905551234527');
 INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (28, 'Technical Records', '+905551234528');
-INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (29, 'Supply Chain & Logistics', '+905551234529');
-INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (30, 'Training & Certification', '+905551234530');
+INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (29, 'Supply Chain and Logistics', '+905551234529');
+INSERT INTO Department (Department_ID, Department_Name, Contact_Number) VALUES (30, 'Training and Certification', '+905551234530');
 
--- Staff  (70 rows)
+-- Staff
 INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (1, 1, 'Aykut', 'Gök', 'Avionics Technician', DATE '2027-05-15', 3);
 INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (2, 2, 'Aslı', 'Okur', 'Engine Specialist', DATE '2026-11-20', 5);
 INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (3, 3, 'İrem Nil', 'Ataç', 'Airframe Inspector', DATE '2028-02-10', 4);
@@ -186,6 +187,8 @@ INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Ex
 INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (69, 7, 'Barış', 'Aksoy', 'Electrical Tech', DATE '2026-11-11', 1);
 INSERT INTO Staff (Staff_ID, Department_ID, First_Name, Last_Name, Role, Cert_Expiry_Date, Seniority_Level) VALUES (70, 5, 'Zehra', 'Taş', 'Pneumatics Engineer', DATE '2030-10-30', 3);
 
+-- Module 3
+
 -- Supplier  (25 rows)
 INSERT INTO Supplier (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (1, 'AeroParts Global', 'sales1@aeroparts.com', 'QC-10000');
 INSERT INTO Supplier (Supplier_ID, Company_Name, Contact_Email, Quality_Cert_No) VALUES (2, 'SkyTech Components', 'sales2@skytech.com', 'QC-10007');
@@ -240,92 +243,6 @@ INSERT INTO Spare_Part (Part_ID, Part_Description, Current_Stock, Critical_Thres
 INSERT INTO Spare_Part (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (24, 'Flap Track Roller', 50, 8);
 INSERT INTO Spare_Part (Part_ID, Part_Description, Current_Stock, Critical_Threshold) VALUES (25, 'Thrust Reverser Cable', 6, 8);
 
--- Maintenance_Type  (25 rows)
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (1, 'A-Check', 4500);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (2, 'B-Check', 9000);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (3, 'C-Check', 65000);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (4, 'D-Check', 180000);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (5, 'Line Maintenance', 1200);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (6, 'Engine Overhaul', 95000);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (7, 'Avionics Inspection', 7000);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (8, 'Landing Gear Overhaul', 52000);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (9, 'Hydraulic System Service', 8800);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (10, 'Fuel System Check', 6400);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (11, 'APU Maintenance', 15500);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (12, 'Cabin Refurbishment', 42000);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (13, 'Structural Repair', 71000);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (14, 'NDT Inspection', 5300);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (15, 'Brake & Wheel Service', 9700);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (16, 'Electrical System Check', 6100);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (17, 'Pressurization Test', 7600);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (18, 'Anti-Ice System Service', 8200);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (19, 'Paint & Coating', 38000);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (20, 'Composite Repair', 46000);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (21, 'Pre-Flight Inspection', 900);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (22, 'Weight & Balance Check', 3100);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (23, 'Fire Protection Test', 5800);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (24, 'Flight Control Rigging', 11200);
-INSERT INTO Maintenance_Type (Type_ID, Type_Description, Standard_Cost) VALUES (25, 'Winglet Replacement', 27000);
-
--- Maintenance_Log  (30 rows)
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1001, 103, 3, DATE '2025-11-12', 320);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1002, 107, 3, DATE '2026-01-20', 290);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1003, 109, 3, DATE '2025-09-05', 410);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1004, 114, 6, DATE '2025-12-01', 150);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1005, 122, 3, DATE '2026-02-14', 360);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1006, 101, 1, DATE '2026-03-02', 40);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1007, 102, 1, DATE '2026-03-08', 38);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1008, 118, 8, DATE '2025-10-19', 180);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1009, 112, 15, DATE '2026-01-11', 26);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1010, 106, 7, DATE '2026-02-22', 22);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1011, 112, 1, DATE '2025-07-13', 254);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1012, 113, 5, DATE '2026-09-28', 20);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1013, 114, 7, DATE '2025-11-18', 151);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1014, 115, 21, DATE '2026-02-10', 237);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1015, 116, 1, DATE '2025-08-01', 149);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1016, 117, 9, DATE '2025-09-04', 167);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1017, 118, 3, DATE '2025-03-12', 97);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1018, 119, 15, DATE '2025-10-11', 265);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1019, 120, 16, DATE '2025-02-12', 172);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1020, 121, 3, DATE '2025-01-08', 55);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1021, 122, 5, DATE '2025-12-16', 50);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1022, 123, 14, DATE '2025-03-22', 258);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1023, 124, 1, DATE '2025-05-17', 231);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1024, 125, 10, DATE '2025-09-25', 117);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1025, 101, 3, DATE '2026-07-22', 206);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1026, 102, 22, DATE '2026-09-15', 76);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1027, 103, 8, DATE '2025-04-03', 188);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1028, 104, 5, DATE '2025-10-18', 132);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1029, 105, 3, DATE '2025-01-03', 45);
-INSERT INTO Maintenance_Log (Maintenance_ID, Aircraft_ID, Type_ID, Operation_Date, Total_Man_Hours) VALUES (1030, 106, 1, DATE '2025-02-02', 184);
-
--- System_User  (25 rows)
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (1, 1, 'aykut.gok', 'HASH_1013x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (2, 2, 'asli.okur', 'HASH_1026x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (3, 3, 'irem.atac', 'HASH_1039x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (4, 4, 'firdevs.yesilyurt', 'HASH_1052x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (5, 5, 'umran.cag', 'HASH_1065x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (6, 6, 'liam.oconnor', 'HASH_1078x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (7, 7, 'burak.sahin', 'HASH_1091x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (8, 8, 'sophia.muller', 'HASH_1104x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (9, 9, 'can.celik', 'HASH_1117x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (10, 10, 'wei.chen', 'HASH_1130x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (11, 11, 'zeynep.arslan', 'HASH_1143x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (12, 12, 'oliver.brown', 'HASH_1156x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (13, 13, 'mehmet.ozturk', 'HASH_1169x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (14, 14, 'isabella.rossi', 'HASH_1182x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (15, 15, 'fatma.yildiz', 'HASH_1195x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (16, 16, 'lucas.silva', 'HASH_1208x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (17, 17, 'hakan.erdogan', 'HASH_1221x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (18, 18, 'mia.jensen', 'HASH_1234x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (19, 19, 'kemal.polat', 'HASH_1247x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (20, 20, 'yuki.takahashi', 'HASH_1260x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (21, 21, 'cem.kilic', 'HASH_1273x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (22, 22, 'amelia.davies', 'HASH_1286x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (23, 23, 'selin.aydin', 'HASH_1299x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (24, 24, 'ethan.wilson', 'HASH_1312x9f');
-INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (25, 25, 'emre.bulut', 'HASH_1325x9f');
-
 -- Part_Supplier_Catalog  (30 rows)
 INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (1, 1, 1);
 INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (2, 1, 5);
@@ -357,6 +274,91 @@ INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (27,
 INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (28, 17, 24);
 INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (29, 18, 2);
 INSERT INTO Part_Supplier_Catalog (Catalog_ID, Part_ID, Supplier_ID) VALUES (30, 19, 5);
+
+-- Module 4
+
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (1, 'A-Check', 3500.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (2, 'B-Check', 15000.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (3, 'C-Check', 125000.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (4, 'D-Check', 500000.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (5, 'Line Maintenance', 800.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (6, 'Transit Check', 300.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (7, 'Daily Inspection', 500.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (8, 'Weekly Inspection', 1200.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (9, 'Engine Wash', 2500.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (10, 'Landing Gear Lubrication', 900.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (11, 'Avionics Calibration', 4200.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (12, 'Cabin Deep Cleaning', 1100.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (13, 'APU Servicing', 3800.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (14, 'Radar Radome Inspection', 1600.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (15, 'Battery Replacement', 750.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (16, 'Oxygen System Pressure Check', 600.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (17, 'Main Landing Gear Tire Replacement', 1800.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (18, 'Brake Assembly Overhaul', 5400.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (19, 'Cockpit Windshield Replacement', 12500.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (20, 'Pitot Tube Cleaning', 450.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (21, 'Fuel Tank Contamination Check', 2200.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (22, 'Emergency Equipment Verification', 650.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (23, 'Cargo Door Seal Lubrication', 350.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (24, 'Engine Oil Filter Change', 850.00);
+INSERT INTO MAINTENANCE_TYPE (Type_ID, Type_Description, Standard_Cost) VALUES (25, 'Hydraulic Fluid Top-up', 400.00);
+COMMIT;
+
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1001, TO_DATE('2025-11-10', 'YYYY-MM-DD'), 4.5, 101, 6);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1002, TO_DATE('2025-11-15', 'YYYY-MM-DD'), 12.0, 102, 8);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1003, TO_DATE('2025-12-01', 'YYYY-MM-DD'), 45.5, 103, 1);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1004, TO_DATE('2025-12-10', 'YYYY-MM-DD'), 2.0, 104, 7);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1005, TO_DATE('2025-12-22', 'YYYY-MM-DD'), 180.0, 105, 2);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1006, TO_DATE('2026-01-05', 'YYYY-MM-DD'), 8.5, 106, 9);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1007, TO_DATE('2026-01-12', 'YYYY-MM-DD'), 3.0, 107, 25);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1008, TO_DATE('2026-01-20', 'YYYY-MM-DD'), 6.5, 108, 12);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1009, TO_DATE('2026-02-02', 'YYYY-MM-DD'), 24.0, 109, 18);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1010, TO_DATE('2026-02-14', 'YYYY-MM-DD'), 1.5, 110, 20);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1011, TO_DATE('2026-02-28', 'YYYY-MM-DD'), 450.0, 101, 3);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1012, TO_DATE('2026-03-05', 'YYYY-MM-DD'), 5.0, 102, 10);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1013, TO_DATE('2026-03-15', 'YYYY-MM-DD'), 14.5, 103, 11);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1014, TO_DATE('2026-03-22', 'YYYY-MM-DD'), 2.5, 104, 15);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1015, TO_DATE('2026-04-01', 'YYYY-MM-DD'), 35.0, 105, 19);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1016, TO_DATE('2026-04-10', 'YYYY-MM-DD'), 4.0, 106, 22);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1017, TO_DATE('2026-04-18', 'YYYY-MM-DD'), 8.0, 107, 21);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1018, TO_DATE('2026-04-25', 'YYYY-MM-DD'), 3.5, 108, 24);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1019, TO_DATE('2026-05-02', 'YYYY-MM-DD'), 120.0, 109, 4);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1020, TO_DATE('2026-05-08', 'YYYY-MM-DD'), 2.0, 110, 23);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1021, TO_DATE('2026-05-15', 'YYYY-MM-DD'), 48.0, 101, 1);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1022, TO_DATE('2026-05-20', 'YYYY-MM-DD'), 6.0, 102, 17);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1023, TO_DATE('2026-05-25', 'YYYY-MM-DD'), 9.5, 103, 13);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1024, TO_DATE('2026-05-28', 'YYYY-MM-DD'), 3.0, 104, 16);
+INSERT INTO MAINTENANCE_LOG (Maintenance_ID, Operation_Date, Total_Man_Hours, Aircraft_ID, Type_ID) VALUES (1025, TO_DATE('2026-05-30', 'YYYY-MM-DD'), 18.0, 105, 14);
+
+-- Module 5
+-- System_User  (25 rows)
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (1, 1, 'aykut.gok', 'HASH_1013x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (2, 2, 'asli.okur', 'HASH_1026x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (3, 3, 'irem.atac', 'HASH_1039x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (4, 4, 'firdevs.yesilyurt', 'HASH_1052x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (5, 5, 'umran.cag', 'HASH_1065x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (6, 6, 'liam.oconnor', 'HASH_1078x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (7, 7, 'burak.sahin', 'HASH_1091x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (8, 8, 'sophia.muller', 'HASH_1104x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (9, 9, 'can.celik', 'HASH_1117x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (10, 10, 'wei.chen', 'HASH_1130x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (11, 11, 'zeynep.arslan', 'HASH_1143x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (12, 12, 'oliver.brown', 'HASH_1156x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (13, 13, 'mehmet.ozturk', 'HASH_1169x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (14, 14, 'isabella.rossi', 'HASH_1182x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (15, 15, 'fatma.yildiz', 'HASH_1195x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (16, 16, 'lucas.silva', 'HASH_1208x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (17, 17, 'hakan.erdogan', 'HASH_1221x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (18, 18, 'mia.jensen', 'HASH_1234x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (19, 19, 'kemal.polat', 'HASH_1247x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (20, 20, 'yuki.takahashi', 'HASH_1260x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (21, 21, 'cem.kilic', 'HASH_1273x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (22, 22, 'amelia.davies', 'HASH_1286x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (23, 23, 'selin.aydin', 'HASH_1299x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (24, 24, 'ethan.wilson', 'HASH_1312x9f');
+INSERT INTO System_User (User_ID, Staff_ID, Username, Password_Hash) VALUES (25, 25, 'emre.bulut', 'HASH_1325x9f');
+
+
 
 -- Maintenance_Crew  (62 rows)
 INSERT INTO Maintenance_Crew (Crew_ID, Maintenance_ID, Staff_ID) VALUES (1, 1001, 1);
